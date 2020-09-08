@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
-        <actionName>Add</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Add</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Add</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -81,6 +67,20 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -128,81 +128,54 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
-        <fullName>Description</fullName>
+        <fullName>CommSubscriptionConsentId</fullName>
+        <inlineHelpText>The communication subscription consent record associated with the communication subscription timing.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Offset</fullName>
+        <inlineHelpText>The amount of time before or after an event or the specific day of the week that you should communicate with the contact point. Set the unit of time in Unit. For example, if you set Unit as &quot;Week&quot; and Offset as &quot;-4&quot; communicate with the contact point four weeks before the event. If you set Offset as &quot;4&quot; communicate with the contact point four weeks after the event. If you set Unit as &quot;Day of Week&quot; and Offset as &quot;1,&quot; communicate with the contact point on Monday. If you set Offset as &quot;7&quot; communicate with the contact point on Sunday.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>DisplayUrl</fullName>
+        <fullName>PreferredTimeEnd</fullName>
+        <inlineHelpText>End of the preferred time span in which to reach the contact point.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>ExternalDataSourceId</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ExternalId</fullName>
+        <fullName>PreferredTimeStart</fullName>
+        <inlineHelpText>Start of the preferred time span in which to reach the contact point.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>Family</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>IsActive</fullName>
+        <fullName>PreferredTimeZone</fullName>
+        <inlineHelpText>Time zone of the preferred time span.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>Name</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>ProductCode</fullName>
-        <trackHistory>false</trackHistory>
-    </fields>
-    <fields>
-        <fullName>QuantityUnitOfMeasure</fullName>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>Quantity__c</fullName>
-        <externalId>false</externalId>
-        <label>Quantity</label>
-        <precision>18</precision>
-        <required>true</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>StockKeepingUnit</fullName>
+        <fullName>Unit</fullName>
+        <inlineHelpText>The unit of time that works with Offset to determine the communication timing.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <listViews>
-        <fullName>AllProducts</fullName>
+        <fullName>All_CommSubscriptionTimings</fullName>
         <filterScope>Everything</filterScope>
-        <label>All Products</label>
+        <label>All Communication Subscription Timings</label>
     </listViews>
     <searchLayouts>
-        <customTabListAdditionalFields>PRODUCT2.NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</customTabListAdditionalFields>
-        <customTabListAdditionalFields>PRODUCT2.DESCRIPTION</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>PRODUCT2.NAME</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>PRODUCT2.FAMILY</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>PRODUCT2.NAME</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>PRODUCT2.FAMILY</lookupPhoneDialogsAdditionalFields>
-        <searchResultsAdditionalFields>PRODUCT2.NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>PRODUCT2.DESCRIPTION</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>PRODUCT2.FAMILY</searchResultsAdditionalFields>
+        <customTabListAdditionalFields>Unit</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Offset</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PreferredTimeStart</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PreferredTimeEnd</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PreferredTimeZone</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Unit</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Offset</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PreferredTimeStart</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PreferredTimeEnd</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PreferredTimeZone</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
